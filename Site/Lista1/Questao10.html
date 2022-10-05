@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Atividade 10">
+    <link href="../style.css" rel="stylesheet">
+    <script>
+        function Inverter() {
+            var numeros = document.getElementById("txtnum").value;
+            numeros = numeros.split(",");
+            var listaInvertida = [];
+            for (var i = 0, j = (numeros.length - 1); i < numeros.length, j >= 0; i++, j--) {
+                listaInvertida[i] = parseInt(numeros[j]);
+            }
+            document.getElementById("divInverter").innerHTML = listaInvertida;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao6.html">Exercício 6</a></span> |
+            <span class="atividade"><a href="Questao7.html">Exercício 7</a></span> |
+            <span class="atividade"><a href="Questao8.html">Exercício 8</a></span> |
+            <span class="atividade"><a href="Questao9.html">Exercício 9</a></span> |
+            <span class="atividade"><a href="Questao10.html">Exercício 10</a></span>
+        </div>
+    </div>
+    <div>
+        <h3> Objetivo: Inverter os valores da lista de inteiros. </h3>
+        <input type="text" id="txtnum">
+        <input type="button" onclick="Inverter()" value="Calcule!!" />
+        <div id="divInverter">
+            <p><i><u>Observação: Digite os números separados por vírgula.</i></u>
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <span>
+            <img class="html" src="../Imagens/html5.jpg">
+            <img class="css" src="../Imagens/css3.png">
+            <img class="css" src="../Imagens/js.png">
+        </span>
+    </div>
+</body>
+
+</html>

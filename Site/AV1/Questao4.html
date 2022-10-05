@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Questão 4">
+    <link href="../style.css" rel="stylesheet">
+
+    <script>
+        function somaPares(){
+            let x = parseInt(document.getElementById("txtnum").value);
+            let value = 0;
+            
+            if (x %2 != 0) value = x+1;
+            else value = x;
+            
+            let array = [value];
+
+            let soma = 0
+
+            imprimir = array => {
+                let i;
+                for ( i = 1; i < 5; i++){
+                    array[i] = array[i-1] + 2
+                }
+                return array 
+            }
+            const sequencia = imprimir(array)
+            sequencia.forEach(value => soma += value)
+            let resultado = `Entrada: ${x} => Saída: ${soma}`
+            document.getElementById("divResultado").innerHTML = resultado;
+        }
+        function Exemplo(){
+            let x = 4;
+            let value;
+
+            let array = [value];
+
+            let soma = 0
+
+            imprimir = array => {
+                let i;
+                for ( i = 1; i < 5; i++){
+                    array[i] = array[i-1] + 2
+                }
+                return array 
+            }
+            const sequencia = imprimir(array)
+            sequencia.forEach(value => soma += value)
+            // Entrada: 11 => Saída: 80
+            let resultado = `Entrada: ${x} => Saída: ${soma}`
+            document.getElementById("divResultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao1.html">Questão 1</a></span> |
+            <span class="atividade"><a href="Questao2.html">Questão 2</a></span> |
+            <span class="atividade"><a href="Questao3.html">Questão 3</a></span> |
+            <span class="atividade"><a href="Questao4.html">Questão 4</a></span> |
+            <span class="atividade"><a href="Questao5.html">Questão 5</a></span>
+        </div>
+    </div>
+
+    <div id="questao">
+        <h3> Objetivo: Somar os 5 números pares consectutivos do valor informado.</h3>
+        <div>       
+            <p> Caso deseje mostrar o valor exemplo aperte o botão "Exemplo", em que o valor de X = 4.</p>
+            <p></p><input type="button" onclick="exemplo()" value="Exemplo!" /></p>
+        </div>
+        <input type="text" id="txtdata">
+        <input type="button" onclick="somaPares()" value="Somar!!" />
+        <p><i><u>Observação: Digite apenas um número.</i></u></p>
+        <div id="divResultado">
+    </div>
+    <div class="footer">
+        <span>
+            <img class="html" src="../Imagens/html5.jpg">
+            <img class="css" src="../Imagens/css3.png">
+            <img class="css" src="../Imagens/js.png">
+        </span>
+    </div>
+</body>
+
+</html>

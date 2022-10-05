@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Atividade 9">
+    <link href="../style.css" rel="stylesheet">
+</head>
+<!-- 09) Desenvolva uma página HTML capaz de escrever a média aritmética dos valores lidos, a quantidade de valores positivos, a quantidade de valores negativos e o percentual de valores negativos e positivos na lista de inteiros (separados por vírgula) de um dado campo de entrada, a partir do click de um botão. -->
+<script>
+    function Media() {
+        let numeros = document.getElementById("txtnum").value;
+        numeros = numeros.split(",");
+        let soma = 0,
+            positivos = 0,
+            negativos = 0;
+        for (let i = 0; i < numeros.length; i++) {
+            if (parseInt(numeros[i]) >= 0) positivos += 1;
+            else negativos += 1;
+
+            soma = soma + parseInt(numeros[i]);
+        }
+        //alert("Soma " + soma);
+        let media = "Média = " + soma / numeros.length;
+        let mensage = "Quantidade de Valores: Positivos " + positivos + " ||| Negativos: " + negativos;
+        let perPos = (positivos * 100) / numeros.length;
+        let perNeg = 100 - perPos;
+        let mensageP = "Percentual de Valores: Positivos: " + perPos + "% ||| Negativos: " + perNeg + "%";
+        ///alert("P " + perPos + " n " + perNeg);
+        //alert("Soma " + soma);
+        //alert("Media " + media);
+        document.getElementById("divMedia").innerHTML = media;
+        document.getElementById("divValue").innerHTML = mensage;
+        document.getElementById("divPercentual").innerHTML = mensageP;
+    }
+</script>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao6.html">Exercício 6</a></span> |
+            <span class="atividade"><a href="Questao7.html">Exercício 7</a></span> |
+            <span class="atividade"><a href="Questao8.html">Exercício 8</a></span> |
+            <span class="atividade"><a href="Questao9.html">Exercício 9</a></span> |
+            <span class="atividade"><a href="Questao10.html">Exercício 10</a></span>
+        </div>
+    </div>
+    <div>
+        <h3> Objetivo: Calcular a média aritmética dos números inteiros, a quantidade dos valores positivos e negativos, e o percentual dos mesmos. </h3>
+        <input type="text" id="txtnum">
+        <input type="button" onclick="Media()" value="Calcule!!" />
+        <div id="divMedia"> </div>
+        <div id="divValue"></div>
+        <div id="divPercentual">
+            <p><i><u>Observação: Digite os números separados por vírgula.</i></u>
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <span>
+            <img class="html" src="../Imagens/html5.jpg">
+            <img class="css" src="../Imagens/css3.png">
+            <img class="css" src="../Imagens/js.png">
+
+        </span>
+    </div>
+</body>
+
+</html>

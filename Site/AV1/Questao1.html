@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Questão 1">
+    <link href="../style.css" rel="stylesheet">
+
+    <script>
+        function preDefinido(){ //Valores usados no exemplo da questão
+            const array = [1, 60, 232, 7, 25, 76, 29,74, 92];
+
+            const maiores60 = array.filter(array => array > 60)
+            const menores300 = maiores60.filter(array => array < 300)
+
+            let lista = menores300;
+            let somatorio = 0;
+
+            lista.forEach(value => somatorio += value)
+
+            let total = `A lista dos valores maiores que 60 é: ${lista}. A soma dos elementos da lista é: ${somatorio}`
+            document.getElementById("divResultado").innerHTML = total;
+        }
+        function usuario(){
+            let lista = document.getElementById("txtnum").value;
+            lista = lista.split(",");
+            lista.forEach(e => parseInt(e))
+            alert(typeof lista)
+
+            lista = lista.filter( e => {
+                if(60 < e && e < 300){
+                    return e
+                }
+            })
+
+            let somatorio = 0;
+
+            lista.forEach(value => somatorio += value)
+            
+            if(lista == 0) lista = "Nenhum valor encontrado"
+        
+            let total = `A lista dos valores maiores que 60 é: ${lista}. A soma dos elementos da lista é: ${somatorio}`
+            document.getElementById("divResultado").innerHTML = total;
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao1.html">Questão 1</a></span> |
+            <span class="atividade"><a href="Questao2.html">Questão 2</a></span> |
+            <span class="atividade"><a href="Questao3.html">Questão 3</a></span> |
+            <span class="atividade"><a href="Questao4.html">Questão 4</a></span> |
+            <span class="atividade"><a href="Questao5.html">Questão 5</a></span>
+        </div>
+    </div>
+    <div>
+        <h3> Objetivo: Indicar os valores maiores que 60 e menores que 300</h3>
+        <div>       
+            <p> Caso deseje filtrar a lista exemplo, basta clicar no botão "Exemplo".</p>
+            <p> Lista dada no exemplo: [1, 60, 232, 7, 25, 76, 29,74, 92]</p>
+            <input type="button" onclick="preDefinido()" value="Exemplo!" />
+        </div>
+        <div>
+            <p></p>
+            <input type="button" onclick="usuario()" value="Filtrar Lista!!" />
+            <input type="text" id="txtnum">
+        </div>
+        
+    </div>
+    <div id="questao">
+        <p><i><u>Observação: Digite os números separados por vírgula.</i></u></p>
+        <div id="divResultado"> </div>
+    </div>
+    <div class="footer">
+        <span>
+            <img class="html" src="../Imagens/html5.jpg">
+            <img class="css" src="../Imagens/css3.png">
+            <img class="css" src="../Imagens/js.png">
+        </span>
+    </div>
+</body>
+
+</html>

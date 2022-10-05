@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Questão 2">
+    <link href="../style.css" rel="stylesheet">
+    <script>
+        class Progressao {
+            constructor(id, nome, n, a1, e) {
+                this.id = parseInt(id)
+                this.nome = nome
+                this.termos = parseInt(n)
+                this.inicial = parseInt(a1)
+                this.razao = parseInt(e)
+            }
+        }
+        
+        const {termos,inicial,razao} = criaProgressao
+        function Aritmetica() {XMLDocument
+            var dados = document.getElementById("txtdata").value;
+            dados = dados.split(",");
+            dados.forEach(e => parseInt(e))
+            
+            var p1 = new criaProgressao(dados[0],dados[1],dados[2],dados[3],dados[4])
+
+            p1 = p1 instanceof criaProgressao? p1: new criaProgressao; 
+
+            console.log(p1)
+
+            const progressaoAritmetica = p1 =>{
+                let array = new array(p1.termos)
+                array[0] = [p1.inicial]
+                
+                array.forEach(element, index => {
+                    element = element.index-1 + razao
+                });
+
+                let soma = 0;
+                
+                array.forEach(e =>{
+                    soma +=e
+                })
+                let total = [array,soma]
+                return total
+            }
+            
+            resultado = progressaoAritmetica(p1)
+            var final = `A lista dos elemtentos da progressao é: ${resultado[0]}. A soma dos elementos da progressao é: ${resultado[1]}`
+            document.getElementById("divResultado1").innerHTML = final;
+        }
+        function Geometrica(){
+
+            var dados = document.getElementById("txtdata").value;
+            dados = dados.split(",");
+            dados.forEach(e => parseInt(e))
+            var p1 = new criaProgressao(dados[0],dados[1],dados[2],dados[3],dados[4])
+
+            const progressaoGeometrica = p1 =>{
+                let array = [p1.inicial]
+                for(let i = 1; i<p1.termos; i++){
+                    array.push(p1.razao * array[i-1])
+                }
+                
+                let soma = 0;
+                
+                array.forEach(e =>{
+                    soma +=e
+                })
+                let total = [array,soma]
+                return total
+            }
+
+            resultado = progressaoGeometrica(p1)
+            var final = `A lista dos elemtentos da progressao é: ${resultado[0]}. A soma dos elementos da progressao é: ${resultado[1]}`
+            document.getElementById("divResultado2").innerHTML = final;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao1.html">Questão 1</a></span> |
+            <span class="atividade"><a href="Questao2.html">Questão 2</a></span> |
+            <span class="atividade"><a href="Questao3.html">Questão 3</a></span> |
+            <span class="atividade"><a href="Questao4.html">Questão 4</a></span> |
+            <span class="atividade"><a href="Questao5.html">Questão 5</a></span>
+        </div>
+    </div>
+    <div id="questao">
+        <h3> Objetivo: Mostrar os n elementos de um objeto com uma Progressão Aritmética e Geométrica e a soma dos mesmos.</h3>
+        <input type="text" id="txtdata">
+        <input type="button" onclick="Aritmetica()" value="Progressao Aritmetica" />
+        <div id="divResultado1"> </div>
+        <p></p>
+        <input type="text" id="txtdata">
+        <input type="button" onclick="Geometrica()" value="Progressao Geometrica" />
+        <div id="divResultado2"> </div>
+        <p><i><u>Observação: Digite os números separados por vírgula.</i></u></p>
+    </div>
+    <div class="footer">
+        <span>
+            <img class="html" src="../Imagens/html5.jpg">
+            <img class="css" src="../Imagens/css3.png">
+            <img class="css" src="../Imagens/js.png">
+        </span>
+    </div>
+</body>
+
+</html>

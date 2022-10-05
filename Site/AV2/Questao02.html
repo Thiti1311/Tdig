@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Questão 2 - Atividade Avaliativa II">
+    <link href="../style.css" rel="stylesheet">
+
+    <script>
+        function Dados(){ //Se possivel adicionar função para receber novas informções do usuário
+            const usuario = {
+                "autor": "Demetrio Mestre",
+                "endereco": {
+                    "rua": "Rua Qualquer",
+                    "suite": "JS",
+                    "cidade": "Campina Grande",
+                    "CEP": "581485-148",
+                        "geo": {
+                            "lat": "13.51",
+                            "lng": "52.54"
+                        }
+                    }
+                }
+            let {autor, endereco:{cidade, suite,CEP,geo:{lat,lng}}} = usuario
+            let separa = autor.split(" ")
+            autor = separa[0] + " " + suite + " " + separa[1]
+            const resultado = `${autor}: ${CEP} - ${cidade} (${lat}, ${lng})`;
+            //Saída esperada: Demetrio JS Mestre: 581485-148 - Campina Grande (13.51, 52.54)
+            document.getElementById("divResultado").innerHTML = resultado
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao01.html">Questão 1</a></span> |
+            <span class="atividade"><a href="Questao02.html">Questão 2</a></span> |
+            <span class="atividade"><a href="Questao03.html">Questão 3</a></span> |
+            <span class="atividade"><a href="Questao04.html">Questão 4</a></span> |
+            <span class="atividade"><a href="Questao05.html">Questão 5</a></span>
+        </div>
+    </div>
+
+    <div id="questao">
+        <h3> Objetivo: Mostrar dados especificos da classe usuario.</h3>
+        <div class="info">Classe informada:<br>
+            const usuario: any = {<br>
+                "autor": "Demetrio Mestre",<br>
+                "endereco": {<br>
+                "rua": "Rua Qualquer",<br>
+                "suite": "JS",<br>
+                "cidade": "Campina Grande",<br>
+                "CEP": "581485-148",<br>
+                "geo": {<br>
+                "lat": "13.51",<br>
+                "lng": "52.54"<br>
+                }<br>
+                }<br>
+                }<br>
+        </div>
+        <input type="button" onclick="Dados()" value="Mostrar Dados" />
+        <div id="divResultado"> </div>
+    </div>
+    <div class="footer">
+        <span>
+            <img class="html" src="../Imagens/html5.jpg">
+            <img class="css" src="../Imagens/css3.png">
+            <img class="css" src="../Imagens/js.png">
+        </span>
+    </div>
+</body>
+
+</html>

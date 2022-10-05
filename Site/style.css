@@ -1,0 +1,64 @@
+img {
+    max-width: 4%;
+    max-height: 4%;
+}
+
+.html {
+    right: 0px;
+    top: 0px;
+}
+
+.css {
+    left: auto;
+    top: auto;
+}
+.atividades {
+    text-align: center;
+}
+.container {
+    width: 90%;
+    height: auto;
+    border-style: double;
+    background-clip: padding-box;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.links {
+    font-size: 1.65em;
+    padding: 10px;
+    text-align: center;
+}
+.atividade {
+    padding: 25px;
+    size: 10%;
+}
+body {
+    background-image: url("Imagens/UEPBWALL.png");
+    background-color: #cccccc;
+    background-size: cover;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+a:link,
+a:visited {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+a:hover {
+    Text-decoration: underline;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+.caixaTexto {
+    width: 15px;
+    height: 5%;
+}

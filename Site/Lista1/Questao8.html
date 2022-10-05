@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Atividade 8">
+    <link href="../style.css" rel="stylesheet">
+
+    <script>
+        function Fatorial() {
+            // pega os numeros do input separados por virgula
+            var numeros = document.getElementById("txtnum").value;
+            var fatorial = "| ";
+            // separa os numeros com base na posição das virgulas
+            numeros = numeros.split(",");
+            //transformar os numeros em inteiro
+            for (i = 0; i < numeros.length; i++) {
+                numeros[i] = parseInt(numeros[i]);
+            }
+            for (i = 0; i < numeros.length; i++) {
+                var resultado = numeros[i];
+                for (var j = 1; j < numeros[i]; j++) {
+                    resultado *= j;
+                }
+                fatorial += resultado += " | ";
+            }
+
+
+            var total = "Fatoriais = " + fatorial;
+            document.getElementById("divResultado").innerHTML = total;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao6.html">Exercício 6</a></span> |
+            <span class="atividade"><a href="Questao7.html">Exercício 7</a></span> |
+            <span class="atividade"><a href="Questao8.html">Exercício 8</a></span> |
+            <span class="atividade"><a href="Questao9.html">Exercício 9</a></span> |
+            <span class="atividade"><a href="Questao10.html">Exercício 10</a></span>
+        </div>
+    </div>
+    <div>
+        <h3> Objetivo: Calcular o fatorial dos números inteiros.</h3>
+        <input type="text" id="txtnum">
+        <input type="button" onclick="Fatorial()" value="Calcular Fatorial!!" />
+        <div id="divResultado">
+            <p><i><u>Observação: Digite os números separados por vírgula.</i></u>
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <span>
+            <img class="html" src="../Imagens/html5.jpg">
+            <img class="css" src="../Imagens/css3.png">
+            <img class="css" src="../Imagens/js.png">
+
+        </span>
+    </div>
+</body>
+
+</html>

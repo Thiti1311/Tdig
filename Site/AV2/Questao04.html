@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Questão 4 - Atividade Avaliativa II">
+    <link href="../style.css" rel="stylesheet">
+    <script>
+        function getString(){
+
+            let txt = document.getElementById("txtMaisculo").value;
+
+            const colocarTodasLetrasEmMaiusculoEm500ms = (text) => {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        let validaString = parseFloat(text)
+                        if(isNaN(validaString) == true){
+                            resolve(text.toUpperCase())
+                        }else{
+                            reject("Valor informado não é uma String!")
+                        }
+                    }, 500)
+                })
+            }
+            const inverteTodasLetras = (text) => {
+                return new Promise((resolve, reject) => {
+                    resolve(text.split("").reverse().join(""))
+                   
+                })   
+            }
+
+            colocarTodasLetrasEmMaiusculoEm500ms(txt)
+                .then(novaFrase => inverteTodasLetras(novaFrase))
+                .then(fraseFinal => document.getElementById("divResultado").innerHTML = (fraseFinal))
+                .catch(e => document.getElementById("divResultado").innerHTML = (e))
+            
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao01.html">Exercicio 1</a></span> |
+            <span class="atividade"><a href="Questao02.html">Exercicio 2</a></span> |
+            <span class="atividade"><a href="Questao03.html">Exercicio 3</a></span> |
+            <span class="atividade"><a href="Questao04.html">Exercicio 4</a></span> |
+            <span class="atividade"> <a href="Questao05.html">Exercicio 5</a></span>
+        </div>
+    </div>
+    <div class="questao">
+        <h3> Objetivo: Inverter e tornar a String maiuscúlo com Promise.</h3>
+        <input type="text" id="txtMaisculo">
+        <input type="button" onclick="getString()" value="Transformar!!" />
+        <p><i><u>Observação: Digite apenas Strings.</i></u></p>
+        <div id="divResultado"> </div>
+        <div class="footer">
+            <span>
+                <img class="html" src="../Imagens/html5.jpg">
+                <img class="css" src="../Imagens/css3.png">
+                <img class="css" src="../Imagens/js.png">
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Questão 1 - Atividade Avaliativa II">
+    <link href="../style.css" rel="stylesheet">
+
+    <script>
+        function TCC(){
+            document.getElementById("divErro").innerHTML = "";
+            document.getElementById("divResultado").innerHTML = "";
+
+            let E = document.getElementById("entrega").value;
+            let D = document.getElementById("dataFinal").value;
+
+            
+            if(D === "" && E !== ""){
+                resultado = "Eu odeio o prof. Florovsky!"
+                document.getElementById("divResultado").innerHTML = resultado;
+                exit()
+            }else if(E >= 25 || E <= 0 || D >= 25 || D < 0 || D < E){
+                alert("Número informado inválido, por favor digite novamente")
+                exit()
+            }
+
+            E = parseInt(E)
+            D = parseInt(D)
+            
+            let diferenca = 24 - D;
+            if(diferenca >= 3){
+                resultado = "Muito bem! O aluno está apto a apresentar até o natal!"
+                document.getElementById("divResultado").innerHTML = resultado;
+                exit()
+            }else{
+                resultado = "O trabalho está muito ruim!"
+                document.getElementById("divErro").innerHTML = resultado;
+
+                diferenca = D + 2
+
+                if(diferenca <= 24){
+                    resultado = "TCC Apresentado!"
+                    document.getElementById("divResultado").innerHTML = resultado;
+                }else{
+                    resultado = "Não deu! Só no próximo ano agora."
+                    document.getElementById("divResultado").innerHTML = resultado;
+                }
+            } 
+
+            
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao01.html">Questão 1</a></span> |
+            <span class="atividade"><a href="Questao02.html">Questão 2</a></span> |
+            <span class="atividade"><a href="Questao03.html">Questão 3</a></span> |
+            <span class="atividade"><a href="Questao04.html">Questão 4</a></span> |
+            <span class="atividade"><a href="Questao05.html">Questão 5</a></span>
+        </div>
+    </div>
+
+    <div id="questao">
+        <h3>Objetivo: Analisar prazo para revisão do TCC.</h3>
+
+        <input class="caixaTexto" type="text" id="entrega">
+        <input class="caixaTexto" type="text" id="dataFinal">
+        <input type="button" onclick="TCC()" value="Enviar"/>
+        <p><i><u>Observação: Digite apenas números menores que 25 e maiores que 0.</i></u></p>
+        <div id="divErro"> </div>
+        <div id="divResultado"> </div>
+    </div>
+    <div class="footer">
+        <span>
+            <img class="html" src="../Imagens/html5.jpg">
+            <img class="css" src="../Imagens/css3.png">
+            <img class="css" src="../Imagens/js.png">
+        </span>
+    </div>
+</body>
+
+</html>

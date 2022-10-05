@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="Autores" content="João Victor Marinho e Thiago Felipe">
+    <meta name="Description" content="Atividade 7">
+    <link href="../style.css" rel="stylesheet">
+
+    <script>
+        function Somar() {
+            var numeros = document.getElementById("txtnum").value;
+            numeros = numeros.split(",");
+            var soma = 0;
+            for (i = 0; i < numeros.length; i++) {
+                numeros[i] = parseInt(numeros[i]);
+            }
+            for (i = 0; i < numeros.length; i++) {
+                if (numeros[i] % 2 !== 0 && numeros[i] % 3 === 0) {
+                    soma += numeros[i];
+                }
+            }
+            var total = "Soma = " + soma;
+            document.getElementById("divResultado").innerHTML = total;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="links">
+            <span class="atividade"><a href="..\Principal.html">Página Inicial</a></span> |
+            <span class="atividade"><a href="Questao6.html">Exercício 6</a></span> |
+            <span class="atividade"><a href="Questao7.html">Exercício 7</a></span> |
+            <span class="atividade"><a href="Questao8.html">Exercício 8</a></span> |
+            <span class="atividade"><a href="Questao9.html">Exercício 9</a></span> |
+            <span class="atividade"><a href="Questao10.html">Exercício 10</a></span>
+        </div>
+    </div>
+    <div class="container2">
+        <h3> Objetivo: Efetuar a soma dos números ímpares, inteiros, múltiplos de três.</h3>
+        <input type="text" id="txtnum">
+        <input type="button" onclick="Somar()" value="Calcular Soma!!" />
+        <div id="divResultado">
+            <p><i><u>Observação: Digite os números separados por vírgula.</u></i>
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <span>
+            <img class="html" src="../Imagens/html5.jpg">
+            <img class="css" src="../Imagens/css3.png">
+            <img class="css" src="../Imagens/js.png">
+
+        </span>
+    </div>
+</body>
+
+</html>
